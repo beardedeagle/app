@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.2.19
+
+### Fixed
+
+- Extension permission dialogs no longer disappear when the agent finishes a turn, preventing the extension from becoming permanently blocked waiting for approval.
+- Fixed an issue where the extension-permission dialog could appear on session start even when "auto-approve all tools" was enabled.
+- Fixed the session hover card appearing in the wrong position (top-left corner) when hovering over a pinned workspace in the sidebar.
+
 ## v0.2.18
 
 ### Changed

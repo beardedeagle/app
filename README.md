@@ -2,7 +2,9 @@
 
 The GitHub Copilot app is a desktop application for agent-driven development that brings parallel workstreams, GitHub integration, and PR lifecycle management into one place.
 
-> **Availability:** The GitHub Copilot app is in public preview. Copilot Business and Enterprise subscribers have access today. Copilot Pro and Pro+ subscribers can [sign up for early access](https://gh.io/github-app).
+> **Availability:** The GitHub Copilot app is in technical preview and open to all existing Copilot Pro, Pro+, Max, Business, and Enterprise customers, with no waitlist.
+>
+> Copilot Free users and customers not yet on Copilot can [join the waitlist](https://gh.io/github-app) to be notified when broader access opens.
 
 ![GitHub Copilot app](docs/readme-github-app.png)
 

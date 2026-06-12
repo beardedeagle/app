@@ -1,5 +1,46 @@
 # Changelog
 
+## v0.2.31
+
+### Added
+
+- A new Background agents pill above the composer lists active background tasks; clicking a task opens its output in a side panel. In-chat subagent rows now also open task output in a side panel and show agent-type icons.
+- Added a per-row actions menu to the pull request checks panel, letting you re-run failed checks, cancel pending checks, and open check logs without leaving the workspace.
+- Agent merge now remembers your last choice per project. When you create a pull request, the agent-merge selection you last used in that project is reapplied automatically, so you don't have to re-enable it every time.
+- GitHub Projects URLs pasted into the chat composer now render as styled reference pills (with the project name and icon), matching the existing behavior for Issues and Pull Requests.
+- Quick chat now shows an empty state with a GitHub mark and rotating tips when no messages have been sent yet, helping users discover available commands and features.
+- Right-clicking a GitHub-backed project in the sidebar now shows an "Open on GitHub" option that opens the repository in the browser.
+- Right-clicking selected text in a conversation reply now shows a context menu with options to copy the selection or quote it as a follow-up in the composer.
+
+### Changed
+
+- Active tabs now use medium font weight instead of semibold, giving tab strips a lighter, more balanced appearance across the app.
+- Git operations (such as status and diff) are now significantly faster when working with large repositories.
+- The onboarding screen for users without access now directs them to explore Copilot subscription plans instead of joining a waitlist.
+
+### Fixed
+
+- Agent merge now starts its first check promptly after a pull request is created instead of waiting up to a minute.
+- Clicking the scrollbar or padding in the slash command, skill mention, and file reference menus no longer closes the menu before you can scroll.
+- Diff comments containing bare GitHub URLs no longer render clipped or invisible after their link metadata loads.
+- Fix the Linux clipboard via the native backend: images now paste when the webview doesn't expose them, and copy buttons work on wlroots Wayland compositors (such as Hyprland).
+- Fixed a 2–3 second UI freeze on macOS when enabling voice dictation for the first time and the microphone permission prompt appeared.
+- Fixed a security issue where agent-generated links using dangerous URL schemes (javascript:, data:, vbscript:) could execute code in the app.
+- Fixed git operations failing with "terminal prompts disabled" when working in repositories with non-GitHub remotes (Azure DevOps, GitLab, Bitbucket, etc.)
+- Fixed high GPU usage and fan spin-up on macOS while the app is idle, particularly noticeable on high-refresh-rate (120 Hz ProMotion) displays.
+- Fixed intermittent server errors when performing pull request actions (such as queuing, toggling auto-merge, and adding reactions) by automatically retrying transient failures.
+- Fixed the merge panel incorrectly showing "Merge blocked" when a pull request is in the merge queue; it now correctly shows "Queued to merge".
+- Fixed the Update branch button in the merge drawer incorrectly triggering the conflict-resolution agent flow when the branch was simply behind the base branch with no merge conflicts.
+- Links and avatars in the inbox, pull request view, and prompt URL chips now correctly point to the right host when connected to a GitHub Enterprise Cloud Data Residency instance.
+- Mention, issue, and commit autolinks in pull request and comment bodies now resolve to the correct host when connected to a GitHub Enterprise Cloud Data Residency instance.
+- On macOS and Linux, the app now restricts the local database file (which may contain an auth token) to owner-only permissions (0600), and repairs existing installations on the next launch.
+- Opening Settings is now faster.
+- Opening the command palette (⌘K) is now faster and feels instant: it no longer triggers redundant network subscriptions on every open (which could cause multi-second delays for users with many pull requests), renders its overlay through a dedicated portal to avoid expensive whole-window style recalculation, and appears immediately instead of animating in.
+- Project attachment pills in the composer now show the correct project icon and project name instead of the GitHub owner avatar and a user-like label.
+- Screen readers now announce the actual key combination when focusing a keyboard shortcut chip in Settings › Accessibility › Keyboard shortcuts, instead of only reading the command name.
+- The app now attempts to bring itself to the foreground when opened via a deep link from the browser, including when the app window is on a different macOS Space.
+- The auto-merge agent no longer blocks on or attempts to fix optional (non-required) CI checks; only checks required by branch protection are considered when determining whether a PR is mergeable.
+
 ## v0.2.30
 
 ### Added

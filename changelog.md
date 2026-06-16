@@ -1,5 +1,42 @@
 # Changelog
 
+## v0.2.34
+
+### Highlights
+
+- Added a Plugins tab in Settings to install, manage, and browse Copilot plugins from marketplaces, with enable/disable toggles, update, and uninstall.
+- Pull request and issue detail views now show a metadata toolbar below the title with one-click editing for reviewers, assignees, and labels.
+- You can now select and copy text from the diff view, with selections preserved as you scroll.
+- New session screens display rotating feature tips covering slash commands, file references, modes, and more.
+- Clicking a choice in an ask-user prompt now confirms it immediately, removing the need for a second Continue click.
+
+### Added
+
+- Added a Plugins tab in Settings to install, manage, and browse Copilot plugins from marketplaces, including enable/disable toggles, update, and uninstall.
+- Added an "Open in default browser" option to the right-click context menu on links in chat messages.
+- New session screens now display rotating feature tips — covering slash commands, file references, modes, and more — so you can discover what Copilot can do while you think about your first message.
+- Pull request and issue detail views now show a metadata toolbar directly below the title with pill-shaped buttons for reviewers, assignees, and labels — each editable in one click.
+- You can now select and copy text from the diff view, with selections preserved as you scroll through virtualized content.
+
+### Changed
+
+- Clicking a choice in an ask-user prompt now confirms it immediately, removing the need to click Continue as a second step.
+- The rotating tip in the empty states is now more accessible: its shuffle control names the action in its accessible name ("Show another tip"), and a newly shuffled tip is announced to screen readers.
+- You can now scroll the mouse wheel over the right-panel tab bar to reveal tabs that don't fit on screen, in addition to using the overflow menu.
+
+### Fixed
+
+- Fixed a horizontal scrollbar appearing in the Settings dialog at high browser zoom levels.
+- In the keyboard shortcuts help dialog, screen readers now read each shortcut as a structured list that pairs the action with its keys, and announce punctuation keys such as comma, brackets, and backtick by name instead of skipping them.
+- Long single-word pull request and issue titles (such as test method names) now wrap correctly instead of overflowing the container in both the full-screen and sidebar panel views.
+- On Linux, middle-click paste no longer unexpectedly attaches a clipboard image to the message composer.
+- Screen readers now announce the correct last-updated time for sidebar workspace rows instead of always saying '2 minutes ago'.
+- Screen readers now announce which item is active in the Settings navigation panel, making it easier to orient within the Settings dialog without leaving the navigation list.
+- Screen readers now correctly announce "Settings" (instead of "Projects") when the Settings dialog opens.
+- The 'No GitHub repositories yet' empty-state heading in My Work is now a real heading, allowing screen-reader users to reach it via heading navigation.
+- The Settings dialog page title is now properly announced as a heading by screen readers, improving navigation for assistive technology users.
+- VoiceOver now announces Skills settings rows correctly — the disclosure reads only the skill name instead of including the action buttons' labels in the announcement.
+
 ## v0.2.33
 
 ### Highlights

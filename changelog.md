@@ -1,5 +1,46 @@
 # Changelog
 
+## v1.0.2
+
+### Highlights
+
+- Session forking is now available to all users: fork a session from a completed agent response to explore an alternative approach, then merge the forked work back to the parent session.
+- Pull request creation now automatically creates or reuses forks for public repositories when you don't have push access to the upstream.
+- Start a Copilot session in any repository directly from an issue's context menu in My Work, not just the repository the issue was filed in.
+- Weekly automations can now be scheduled to run on multiple days of the week.
+- Remote sessions are easier to find: the sidebar's new-project menu includes a 'Resume remote session…' option, and the command palette groups remote sessions by repository.
+
+### Added
+
+- Added a "New session in repository..." option to the issue context menu in My work, letting you start a session in a different repository than the one the issue was filed in. The bulk Actions picker can also start individual sessions in a chosen repository.
+- Pull request creation can now automatically create or reuse forks for public repositories when the current user cannot push to the upstream repository.
+- Session forking is now available to all users: fork a session from a completed agent response to explore an alternative approach, then merge the forked work back to the parent session.
+- Weekly automations can now be scheduled to run on multiple days of the week. Select multiple weekday checkboxes when creating or editing a weekly automation; the trigger displays a compact summary (e.g. "3 days selected") and the selected days are restored when you reopen the automation.
+
+### Changed
+
+- Clicking a GitHub issue link in chat or a canvas opens the issue in the app's side panel instead of the system browser. Right-click the link to open it in your default browser or copy it; in a canvas, Cmd/Ctrl-click also opens it in your browser.
+- In the sidebar, sessions with an open pull request now appear above sessions that are still actively running.
+- Remote sessions are now easier to find: the sidebar's new-project menu includes a 'Resume remote session…' option, and the command palette groups remote sessions by repository with pull-request or branch icons.
+- Search and grep tool results are now grouped by file, showing each file path once as a header with a line-number gutter, making results easier to scan.
+- Sessions whose PR is ready to merge now appear under a dedicated "Ready to merge" group in the grouped sidebar view, instead of being mixed into "Needs input".
+- Settings sidebar navigation is now organized into logical groups, labels use consistent sentence case ("MCP servers", "Model providers"), and Model providers has a new icon.
+- The composer now shows a dedicated Plan pill and a separate Background agents pill again, instead of a single combined Tasks pill.
+- The default branch prefix now uses a dash separator (e.g. `username-my-feature`) instead of a slash (e.g. `username/my-feature`) for newly generated branch names.
+
+### Fixed
+
+- An error message now appears under the repository name input in the create repository dialog when the name contains disallowed characters, instead of the Create button silently staying disabled.
+- Fixed a file-watcher leak that could accumulate while opening, archiving, and deleting workspaces over a long session, eventually exhausting the app's file watchers and causing it to stop detecting file changes until restart.
+- Fixed an issue where editing the interval of a workspace-bound automation workflow (e.g., manual → hourly) would silently revert to the previous value after saving.
+- Fixed an issue where the composer pills (Changes, PR, Plan, Tasks) would briefly stack vertically when closing an expanded panel.
+- My Work list rows now stay highlighted while their context menu is open, making it clear which item the menu applies to.
+- Opening the Automations view via a deep link on cold start no longer intermittently shows a blank screen.
+- Repository name input no longer auto-capitalizes the first letter — the exact casing you type is now preserved.
+- The add-tab (+) button in the right-panel tab bar now sits immediately after the last tab instead of floating at the far right edge of the bar.
+- The changed-files count no longer resets to zero when a file-watcher error occurs; the last known file list is preserved until a successful update arrives.
+- User, plugin, and remote agents are now shown in the /agent command when working inside a project, not just project-scoped agents.
+
 ## v1.0.1
 
 ### Highlights
